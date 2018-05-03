@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginTop">10dp</dimen>
+    <dimen name="TitleSize">14sp</dimen>
+    <dimen name="CategorySize">12sp</dimen>
+    <dimen name="DescSize">12sp</dimen>
+    <dimen name="dateSize">12sp</dimen>
+    <dimen name="paddingFeed">5dp</dimen>
+    <dimen name="categorySelectMargin">5dp</dimen>
+</resources>
