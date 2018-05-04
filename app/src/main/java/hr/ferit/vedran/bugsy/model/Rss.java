@@ -15,7 +15,4 @@ public class Rss {
         return channel;
     }
 
-    public void setChannel(Channel channel) {
-        this.channel = channel;
-    }
 }

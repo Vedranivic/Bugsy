@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
  */
 
 @Root(name = "enclosure", strict = false)
-public class Image {
+public class Enclosure {
 
     @Attribute(name = "url", required = false) private String url;
 
@@ -16,7 +16,4 @@ public class Image {
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }

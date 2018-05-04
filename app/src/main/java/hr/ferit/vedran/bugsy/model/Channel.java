@@ -18,7 +18,4 @@ public class Channel {
         return newsList;
     }
 
-    public void setNewsList(List<ListElement> newsList) {
-        this.newsList = newsList;
-    }
 }

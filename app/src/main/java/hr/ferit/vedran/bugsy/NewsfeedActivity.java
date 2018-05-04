@@ -69,14 +69,15 @@ public class NewsfeedActivity extends AppCompatActivity implements Callback<Rss>
                 .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build();
         NewsfeedAPI API = retrofit.create(NewsfeedAPI.class);
-        Call<Rss> call = API.getNewsfeed(spCategory.getSelectedItem().toString().toLowerCase());
+        Call<Rss> call = API.getNewsfeed("Tableti");
         call.enqueue(this);
     }
 
     @Override
     public void onResponse(Call<Rss> call, Response<Rss> response) {
         if(response.body() != null){
-            List<ListElement> list = response.body().getChannel().getNewsList();
+            List<ListElement> newsList = response.body().getChannel().getNewsList();
+            newsfeedAdapter.refreshFeed(newsList);
         }
         else Toast.makeText(getApplicationContext(),
                 "There are no result.", Toast.LENGTH_SHORT).show();
@@ -84,7 +85,7 @@ public class NewsfeedActivity extends AppCompatActivity implements Callback<Rss>
 
     @Override
     public void onFailure(Call<Rss> call, Throwable t) {
-        Log.i("Failure", t.getMessage());
+        Log.i("FailureEEE", t.getMessage());
     }
 
 }

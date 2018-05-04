@@ -1,7 +1,6 @@
 package hr.ferit.vedran.bugsy.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +14,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnItemSelected;
-import hr.ferit.vedran.bugsy.NewsfeedActivity;
 import hr.ferit.vedran.bugsy.R;
 import hr.ferit.vedran.bugsy.model.ListElement;
 
@@ -74,7 +71,7 @@ public class NewsfeedAdapter extends RecyclerView.Adapter<NewsfeedAdapter.ViewHo
         holder.category.setText(item.getCategory());
         holder.description.setText(item.getDescription());
         holder.date.setText(item.getPubDate().substring(0, item.getPubDate().length()-5));
-        Picasso.get().load(item.getImage().getUrl()).into(holder.image);
+        Picasso.get().load(item.getEnclosure().getUrl()).into(holder.image);
     }
 
     @Override
@@ -84,6 +81,12 @@ public class NewsfeedAdapter extends RecyclerView.Adapter<NewsfeedAdapter.ViewHo
         else
             return 0;
     }
+
+    public void refreshFeed(List<ListElement> newNewsfeed){
+        this.newsfeed = newNewsfeed;
+        notifyDataSetChanged();
+    }
+
 
 
 }
