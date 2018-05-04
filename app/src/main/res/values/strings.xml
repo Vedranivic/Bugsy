@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Bugsy</string>
     <string-array name="Categories">
-        <item>Automobili</item>
         <item>Biznis</item>
-        <item>Događaji</item>
-        <item>Medicina</item>
+        <item>Gadgeti</item>
+        <item>Igre</item>
+        <item>Internet</item>
+        <item>Konferencije</item>
         <item>Mobiteli</item>
-        <item>Promo</item>
+        <item>Osobe</item>
         <item>Recenzije</item>
-        <item>Sigurnost</item>
-        <item>Vijesti</item>
-        <item>Zabava</item>
+        <item>Skandali</item>
+        <item>Savjeti</item>
     </string-array>
 
 </resources>

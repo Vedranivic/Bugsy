@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="marginTop">30dp</dimen>
+    <dimen name="marginTop">50dp</dimen>
     <dimen name="TitleSize">14sp</dimen>
     <dimen name="CategorySize">12sp</dimen>
     <dimen name="DescSize">12sp</dimen>
     <dimen name="dateSize">12sp</dimen>
     <dimen name="paddingFeed">5dp</dimen>
-    <dimen name="categorySelectMargin">5dp</dimen>
+    <dimen name="categorySelectMargin">15dp</dimen>
     <dimen name="fabMargin">10dp</dimen>
     <dimen name="marginStartItem">15dp</dimen>
     <dimen name="marginTopItem">3dp</dimen>
