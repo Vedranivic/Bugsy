@@ -1,6 +1,7 @@
 package hr.ferit.vedran.bugsy;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -14,6 +15,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.OnItemSelected;
 import hr.ferit.vedran.bugsy.adapter.NewsfeedAdapter;
 import hr.ferit.vedran.bugsy.adapter.NewsfeedClickCallback;
 import hr.ferit.vedran.bugsy.model.ListElement;
@@ -33,6 +36,8 @@ public class NewsfeedActivity extends AppCompatActivity implements Callback<Rss>
     RecyclerView rvNewsfeed;
     @BindView(R.id.spCategory)
     Spinner spCategory;
+    @BindView(R.id.fabRefresh)
+    FloatingActionButton fabRefresh;
     NewsfeedAdapter newsfeedAdapter;
 
     NewsfeedClickCallback clickCallback = new NewsfeedClickCallback() {
@@ -69,8 +74,19 @@ public class NewsfeedActivity extends AppCompatActivity implements Callback<Rss>
                 .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build();
         NewsfeedAPI API = retrofit.create(NewsfeedAPI.class);
-        Call<Rss> call = API.getNewsfeed("Tableti");
+        Call<Rss> call = API.getNewsfeed(spCategory.getSelectedItem().toString().toLowerCase());
         call.enqueue(this);
+    }
+
+
+    @OnClick(R.id.fabRefresh)
+    public void refresh(){
+        fetchNewsfeed();
+    }
+
+    @OnItemSelected(R.id.spCategory)
+    public void filter(){
+        fetchNewsfeed();
     }
 
     @Override
@@ -87,5 +103,6 @@ public class NewsfeedActivity extends AppCompatActivity implements Callback<Rss>
     public void onFailure(Call<Rss> call, Throwable t) {
         Log.i("FailureEEE", t.getMessage());
     }
+
 
 }

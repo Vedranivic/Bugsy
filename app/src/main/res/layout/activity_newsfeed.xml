@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/listBack"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="hr.ferit.vedran.bugsy.NewsfeedActivity">
+    tools:context="hr.ferit.vedran.bugsy.NewsfeedActivity"
+    android:background="@color/colorBack">
 
     <Spinner
         android:id="@+id/spCategory"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/categorySelectMargin"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:entries="@array/Categories"
+        android:theme="@style/AppTheme.SpinnerWhiteText"
+        android:popupBackground="@color/colorPrimary"
         >
     </Spinner>
 
@@ -23,9 +26,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/marginTop"
-        android:layout_below="@+id/spCategory"
-        android:padding="@dimen/paddingFeed"
         >
     </android.support.v7.widget.RecyclerView>
 
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabRefresh"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/fabMargin"
+        android:src="@drawable/ic_refresh_24dp"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

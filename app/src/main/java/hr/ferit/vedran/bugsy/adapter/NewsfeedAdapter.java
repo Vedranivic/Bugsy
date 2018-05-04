@@ -87,6 +87,4 @@ public class NewsfeedAdapter extends RecyclerView.Adapter<NewsfeedAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-
-
 }
